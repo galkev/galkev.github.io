@@ -1,189 +1,259 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Kevin Galim
+  label: Senior AI Research Engineer
+  email: "galimkevin@gmail.com"
+  location: Seoul, South Korea
+  summary: Machine learning researcher specializing in efficient inference for large-scale generative models and LLM systems. Author of 10+ publications at major ML conferences including ICLR, ICML, ACL, CVPR, ECCV, and WACV.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: kgalim
 
   sections:
-    Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
-
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: FuriosaAI
+        position: Senior AI Research Engineer
+        location: Seoul, South Korea
+        start_date: 2021-06-01
+        end_date: present
+        summary: 
         highlights:
-          - Relativity
-          - Description 2.
+          - Conducted research on large-scale generative models and LLMs, including efficient inference (KV-cache optimization, diffusion LLMs), scalable training (PEFT, state space models), and advanced architectures.
+          - Co-authored multiple first- and co-first-author papers in top-tier conferences (ICLR, ICML, ACL, CVPR, ECCV, WACV).
+          - Designed end-to-end pipelines for training, evaluating, and deploying LLMs on custom AI accelerators.
+          - Built and demonstrated real-time computer vision demos on custom hardware at CVPR 2022 and 2023.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Funzin
+        position: AI / Computer Vision Research and Development Engineer
+        location: Seoul, South Korea
+        start_date: 2020-03-01
+        end_date: 2021-06-01
+        summary: Worked on applied computer vision systems and deep learning models for autonomous and embedded platforms.
         highlights:
-          - Description 1.
-          - Description 2.
+          - Developed and trained deep learning models for object detection, road/sidewalk segmentation, and gesture detection using PyTorch and TensorFlow.
+          - Built perception systems for an autonomous golf cart platform, including detection and segmentation pipelines.
+          - Optimized models for embedded deployment using TensorRT, OpenVINO, Coral, DSP acceleration, and ARM NEON.
+          - Developed and calibrated a real-time OpenGL 3D surround-view system (SVM) for embedded hardware, demonstrated at CES 2021.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Dowosoft | Premium Software Development
+        position: Web / AR Developer (Freelance)
+        location: Munich, Germany
+        start_date: 2019-08-01
+        end_date: 2020-03-01
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Built AR mobile applications using Unity3D.
+          - Developed cloud-backed web applications using AWS and Google Cloud.
+          - Created cross-platform mobile apps using Flutter.
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: ARRI
+        position: C++ / CUDA Software Engineer
+        location: Munich, Germany
+        start_date: 2015-08-01
+        end_date: 2016-09-01
+        highlights:
+          - Developed GPU-accelerated image processing algorithms using CUDA and OpenCL.
+          - Built real-time visualization and image analysis tools using C++ and OpenGL.
+          - Contributed to software used in professional digital cinema workflows.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+    Education:
+      - institution: Technical University of Munich
+        location: Munich, Germany
+        url: https://www.tum.de/
+        area: Informatics — Games Engineering
+        studyType: Master's Degree
+        start_date: 2016
+        end_date: 2019
+        score: "1.4 (German system)"
+        highlights:
+          - "Specialization combining computer science, computer vision, and high-performance CPU/GPU programming."
+          - "Master's Thesis: Deep Learning for Video Depth Estimation from Defocus (Grade 1.0) — later published at CVPR 2020."
+
+      - institution: The University of Tokyo
+        location: Tokyo, Japan
+        area: Computer Graphics
+        studyType: Research (Semester Abroad)
+        start_date: 2017
+        end_date: 2018
+        highlights:
+          - Implemented a voxel-based rendering engine using C++ and OpenGL.
+          - Developed an anti-aliasing approach for ray tracing in voxel scenes.
+
+      - institution: Technical University of Munich
+        location: Munich, Germany
+        url: https://www.tum.de/
+        area: Informatics — Games Engineering
+        studyType: Bachelor's Degree
+        start_date: 2013
+        end_date: 2016
+        score: "1.6 (German system)"
+        highlights:
+          - "Bachelor's Thesis: Preconditioners for Tikhonov Regularization in Image Deblurring."
+          - Research focused on numerical optimization and inverse problems in image restoration.
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "Draft-based Approximate Inference for LLMs"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - "Kevin Galim*"
+          - "Ethan Ewer*"
+          - "Wonjun Kang"
+          - "Minjae Lee"
+          - "Hyung Il Koo"
+          - "Kangwook Lee"
+        publisher: International Conference on Learning Representations (ICLR)
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2506.08373
+        summary: "We present a unified framework for approximate inference in long-context LLMs using small draft models to predict token and KV-cache importance. We introduce SpecKV, SpecPC, and SpecKV-PC, enabling more accurate KV-cache and prompt compression while preserving the same efficiency gains in memory usage, latency, and throughput."
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: "ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - "Wonjun Kang*"
+          - "Kevin Galim*"
+          - "Seunghyuk Oh*"
+          - "Minjae Lee"
+          - "Yuchen Zeng"
+          - "Shuibai Zhang"
+          - "Coleman Hooper"
+          - "Yuezhou Hu"
+          - "Hyung Il Koo"
+          - "Nam Ik Cho"
+          - "et al."
+        publisher: International Conference on Learning Representations (ICLR)
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2510.04767
+        summary: "Analyzes the fundamental limitations of parallel decoding in diffusion LLMs and introduces ParallelBench, the first benchmark designed to measure quality degradation caused by token dependency violations. Reveals key speed–quality trade-offs and highlights the need for new decoding strategies."
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: "Inference-Aligned SFT for Diffusion LLMs via Group-based Trajectory Sampling"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+          - "Seunghyuk Oh"
+          - "Minjae Lee"
+          - "Kevin Galim"
+          - "Minseo Kim"
+          - "Hyung Il Koo"
+          - "Wonjun Kang"
+          - "Hanbaek Lyu"
+          - "Kangwook Lee"
+        publisher: ICLR Workshop on Decoding and Generation with Language Models (DeLTa)
+        releaseDate: 2026
+
+      - title: "TABED: Test-Time Adaptive Ensemble Drafting for Robust Speculative Decoding in LVLMs"
+        authors:
+          - "Minjae Lee*"
+          - "Wonjun Kang*"
+          - "Byeongkeun Ahn"
+          - "Christian Classen"
+          - "Kevin Galim"
+          - "Seunghyuk Oh"
+          - "Minghao Yan"
+          - "Hyung Il Koo"
+          - "Kangwook Lee"
+        publisher: Conference of the European Chapter of the Association for Computational Linguistics (EACL)
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2601.20357
+        summary: "We study speculative decoding for Large Vision-Language Models (LVLMs) and benchmark existing drafting strategies across diverse multimodal scenarios. We propose TABED, a training-free adaptive ensemble drafting method that dynamically combines batched drafts, achieving up to 1.74× inference speedup and improved robustness over single-draft approaches."
+
+      - title: "UNCAGE: Contrastive Attention Guidance for Masked Generative Transformers in Text-to-Image Generation"
+        authors:
+          - "Wonjun Kang"
+          - "Byeongkeun Ahn"
+          - "Minjae Lee"
+          - "Kevin Galim"
+          - "Seunghyuk Oh"
+          - "Hyung Il Koo"
+          - "Nam Ik Cho"
+        publisher: IEEE Access
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2508.05399
+        summary: "We study compositional text-to-image generation in Masked Generative Transformers, which remain underexplored compared to diffusion models. We propose UNCAGE, a training-free method that leverages contrastive attention guidance to prioritize object-representative tokens during unmasking, improving compositional fidelity with negligible inference overhead."
+
+      - title: "State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models"
+        authors:
+          - "Wonjun Kang*"
+          - "Kevin Galim*"
+          - "Yuchen Zeng*"
+          - "Minjae Lee"
+          - "Hyung Il Koo"
+          - "Nam Ik Cho"
+        publisher: Annual Meeting of the Association for Computational Linguistics (ACL)
+        releaseDate: 2025
+        url: https://arxiv.org/abs/2503.03499
+        summary: "We investigate parameter-efficient fine-tuning for State Space Models, where prompt-based approaches such as prompt tuning and prefix tuning are ineffective. We propose state-based PEFT methods, including State-offset Tuning, which directly adjusts model states at each timestep to improve adaptation."
+
+      - title: "Parameter-Efficient Fine-Tuning of State Space Models"
+        authors:
+          - "Kevin Galim*"
+          - "Wonjun Kang*"
+          - "Yuchen Zeng*"
+          - "Hyung Il Koo"
+          - "Kangwook Lee"
+        publisher: International Conference on Machine Learning (ICML)
+        releaseDate: 2025
+        url: https://arxiv.org/abs/2410.09016
+        summary: "Introduces Sparse Dimension Tuning (SDT), a parameter-efficient fine-tuning method specifically designed for state space models such as Mamba. By combining SDT for SSM modules with LoRA for projection layers, achieves state-of-the-art performance for adapting SSM-based language models with minimal additional parameters."
+
+      - title: "Counting Guidance for High Fidelity Text-to-Image Synthesis"
+        authors:
+          - "Wonjun Kang*"
+          - "Kevin Galim*"
+          - "Hyung Il Koo"
+          - "Nam Ik Cho"
+        publisher: "Winter Conference on Applications of Computer Vision (WACV) — Oral"
+        releaseDate: 2025
+        url: https://arxiv.org/abs/2306.17567
+        summary: "We address the challenge of generating the correct number of objects in text-to-image diffusion models. We propose a guidance method that leverages a reference-less counting network and attention-based object masks to steer the denoising process, improving object-count fidelity in generated images."
+
+      - title: "Eta Inversion: Designing an Optimal Eta Function for Diffusion-based Real Image Editing"
+        authors:
+          - "Wonjun Kang*"
+          - "Kevin Galim*"
+          - "Hyung Il Koo"
+        publisher: European Conference on Computer Vision (ECCV)
+        releaseDate: 2024
+        url: https://arxiv.org/abs/2403.09468
+        summary: "We study diffusion inversion for real image editing, where existing methods struggle to balance faithfulness to the source image and alignment with the edit prompt. We propose a diffusion inversion method with time- and region-dependent η control, enabling flexible editing while preserving image fidelity."
+
+      - title: "Focus on Defocus: Bridging the Synthetic to Real Domain Gap for Depth Estimation"
+        authors:
+          - "Maxim Maximov"
+          - "Kevin Galim"
+          - "Laura Leal-Taixé"
+        publisher: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+        releaseDate: 2020
+        url: https://arxiv.org/abs/2005.09623
+        summary: "We address the generalization challenge in depth estimation, where models trained on synthetic data often fail on real-world scenes due to domain gaps. We propose a method that leverages domain-invariant defocus blur cues and a permutation-invariant network, enabling models trained on synthetic data to generalize effectively to real images."
+
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: LLM Inference Optimization
+        level: Expert
+        keywords: "Speculative Decoding, KV-Cache Optimization, Diffusion LLMs, Efficient Inference"
+
+      - name: Machine Learning Research
+        level: Expert
+        keywords: "Parameter-Efficient Fine-Tuning, State Space Models, Large Language Models, Diffusion Models"
+
+      - name: Computer Vision
+        level: Expert
+        keywords: "Object Detection, Depth Estimation, Image Segmentation, Generative Models"
+
+      - name: Systems & Hardware
+        level: Advanced
+        keywords: "CUDA, TensorRT, OpenVINO, ARM NEON, Custom AI Accelerators"
+
+      - name: Programming
+        level: Expert
+        keywords: "Python, PyTorch, C++, CUDA, TensorFlow, JavaScript"
 
     Languages:
       - name: German
-        summary: "Native speaker"
+        summary: "Native or bilingual proficiency"
 
       - name: English
-        summary: "Fluent"
+        summary: "Full professional proficiency"
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Korean
+        summary: "Professional working proficiency (TOPIK Level 5)"
 
     Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: TOPIK (Test of Proficiency in Korean) — Level 5
+        date: 2020-11-01
+        issuer: National Institute for International Education

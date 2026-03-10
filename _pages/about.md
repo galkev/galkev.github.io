@@ -2,33 +2,32 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: >
+  Senior AI Research Engineer · <a href="https://furiosa.ai" target="_blank">FuriosaAI</a> · Seoul, South Korea
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>FuriosaAI</p>
+    <p>Seoul, South Korea</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+news: true
+selected_papers: true
+social: true
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a Senior AI Research Engineer at [FuriosaAI](https://furiosa.ai), where I design scalable algorithms and systems that make modern AI models faster and more efficient. My research sits at the intersection of **efficient inference**, **generative modeling**, and **AI systems**.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I have authored 10+ publications at top-tier venues including **ICLR**, **ICML**, **ACL**, **CVPR**, **ECCV**, and **WACV**, with work spanning efficient LLM inference (speculative decoding, KV-cache optimization), parameter-efficient fine-tuning for state space models, and diffusion-based language models.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Before joining FuriosaAI, I worked on applied computer vision at Funzin (autonomous golf cart perception, CES 2021), GPU-accelerated image processing at [ARRI](https://arri.com) in Munich, and freelance AR/web development. I received my M.Sc. in Informatics (Games Engineering) from the **Technical University of Munich** (grade 1.4), including a semester of research in computer graphics at the **University of Tokyo**.
+
+**Research interests:**
+- Efficient LLM inference: speculative decoding, KV-cache compression, approximate inference
+- Parameter-efficient fine-tuning: LoRA, state space models (Mamba/SSMs)
+- Diffusion-based language models and generative systems
+- AI accelerator deployment and custom hardware pipelines
+
+**Languages:** German (native) · English (fluent) · Korean (professional, TOPIK 5)

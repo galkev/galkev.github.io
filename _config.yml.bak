@@ -1,0 +1,231 @@
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+
+title: Kevin Galim
+first_name: Kevin
+middle_name:
+last_name: Galim
+email: kevin@furiosa.ai
+description: >
+  Senior AI Research Engineer at FuriosaAI, specializing in efficient LLM
+  inference, generative models, and AI systems. Author of 10+ publications
+  at ICLR, ICML, ACL, CVPR, ECCV, and WACV.
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
+  with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+keywords: LLM inference, speculative decoding, KV-cache, diffusion models, PEFT, state space models, AI systems
+
+lang: en
+icon: ⚙️
+
+url: https://kevingalim.github.io
+baseurl:
+last_updated: true
+impressum_path:
+
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
+
+repo_theme_light: default
+repo_theme_dark: dark
+repo_trophies:
+  enabled: true
+  theme_light: flat
+  theme_dark: gitdimmed
+
+# -----------------------------------------------------------------------------
+# RSS Feed
+# -----------------------------------------------------------------------------
+
+rss_icon: true
+
+# -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
+
+navbar_fixed: true
+footer_fixed: false
+search_enabled: true
+search:
+  highlight: false
+
+subscriptions:
+  - feed: /feed.xml
+
+# Dimensions
+max_width: 800px
+
+# TODO: add layout settings (single page vs. multi-page)
+
+# -----------------------------------------------------------------------------
+# Open Graph & Schema.org
+# -----------------------------------------------------------------------------
+
+og_image: /assets/img/profile.jpg
+
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+
+github_username: kevingalim
+gitlab_username:
+twitter_username:
+linkedin_username: kevin-galim
+scholar_userid: G1EpeWYAAAAJ
+semanticscholar_id:
+whatsapp_number:
+orcid_id:
+medium_username:
+quora_username:
+publons_id:
+lattes_id:
+osf_id:
+research_gate_profile:
+scopus_id:
+blogger_url:
+work_url: https://furiosa.ai
+wikidata_id:
+wikipedia_id:
+dblp_url:
+stackoverflow_id:
+kaggle_id:
+lastfm_id:
+spotify_id:
+pinterest_username:
+unsplash_username:
+instagram_id:
+facebook_id:
+youtube_id:
+discord_id:
+zotero_username:
+wechat_qr:
+
+contact_note: >
+  Feel free to reach out about research collaborations or questions on
+  efficient LLM inference and generative models.
+
+# -----------------------------------------------------------------------------
+# Analytics and search engine verification
+# -----------------------------------------------------------------------------
+
+google_analytics:
+cronitor_analytics:
+pirsch_analytics:
+openpanel_analytics:
+google_site_verification:
+bing_site_verification:
+
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog_name: Notes
+blog_nav_title: Blog
+blog_description: Occasional notes on ML research and systems.
+permalink: /blog/:year/:title/
+lsi: false
+
+pagination:
+  enabled: true
+
+related_blog_posts:
+  enabled: true
+  max_related: 5
+
+imagemagick:
+  enabled: false
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: false
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+announcements:
+  enabled: true
+  scrollable: true
+  limit: 10
+
+latest_posts:
+  enabled: false
+  scrollable: true
+  limit: 3
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+include: ["_pages"]
+exclude:
+  - bin/
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+
+plugins:
+  - jekyll-archives
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll/scholar
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+# -----------------------------------------------------------------------------
+# Jekyll scholar
+# -----------------------------------------------------------------------------
+
+scholar:
+  last_name: [Galim]
+  first_name: [Kevin]
+
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+  group_by: year
+  group_order: descending
