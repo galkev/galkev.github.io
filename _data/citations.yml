@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-13'
+  last_updated: '2026-03-16'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 11
@@ -10,7 +10,7 @@ papers:
     title: Counting guidance for high fidelity text-to-image synthesis
     year: '2025'
   G1EpeWYAAAAJ:IjCSPb-OGe4C:
-    citations: 3
+    citations: 4
     title: Draft-based approximate inference for llms
     year: '2025'
   G1EpeWYAAAAJ:Tyk-4Ss8FVUC:
