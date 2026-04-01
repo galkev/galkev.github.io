@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-27'
+  last_updated: '2026-04-01'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 12
@@ -14,7 +14,7 @@ papers:
     title: Draft-based approximate inference for llms
     year: '2025'
   G1EpeWYAAAAJ:Tyk-4Ss8FVUC:
-    citations: 13
+    citations: 14
     title: 'Parallelbench: Understanding the trade-offs of parallel decoding in diffusion llms'
     year: '2025'
   G1EpeWYAAAAJ:UeHWp8X0CEIC:
