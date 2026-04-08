@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-01'
+  last_updated: '2026-04-08'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 12
@@ -18,7 +18,7 @@ papers:
     title: 'Parallelbench: Understanding the trade-offs of parallel decoding in diffusion llms'
     year: '2025'
   G1EpeWYAAAAJ:UeHWp8X0CEIC:
-    citations: 2
+    citations: 3
     title: 'State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models'
     year: '2025'
   G1EpeWYAAAAJ:W7OEmFMy1HYC:
@@ -26,7 +26,7 @@ papers:
     title: Counting guidance for high fidelity text-to-image synthesis. In 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
     year: '2025'
   G1EpeWYAAAAJ:Y0pCki6q_DkC:
-    citations: 0
+    citations: 1
     title: 'TABED: Test-Time Adaptive Ensemble Drafting for Robust Speculative Decoding in LVLMs'
     year: '2026'
   G1EpeWYAAAAJ:YsMSGLbcyi4C:
@@ -34,11 +34,11 @@ papers:
     title: Inference-Aligned SFT for Diffusion LLMs via Group-based Trajectory Sampling
     year: Unknown Year
   G1EpeWYAAAAJ:qjMakFHDy7sC:
-    citations: 9
+    citations: 10
     title: Parameter-efficient fine-tuning of state space models
     year: '2024'
   G1EpeWYAAAAJ:u-x6o8ySG0sC:
-    citations: 107
+    citations: 109
     title: 'Focus on defocus: bridging the synthetic to real domain gap for depth estimation'
     year: '2020'
   G1EpeWYAAAAJ:zYLM7Y9cAGgC:
