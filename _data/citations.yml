@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-04-08'
+  last_updated: '2026-05-04'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 12
     title: 'Eta inversion: Designing an optimal eta function for diffusion-based real image editing'
     year: '2024'
   G1EpeWYAAAAJ:9yKSN-GCB0IC:
-    citations: 22
+    citations: 30
     title: Counting guidance for high fidelity text-to-image synthesis
     year: '2025'
   G1EpeWYAAAAJ:IjCSPb-OGe4C:
@@ -14,16 +14,12 @@ papers:
     title: Draft-based approximate inference for llms
     year: '2025'
   G1EpeWYAAAAJ:Tyk-4Ss8FVUC:
-    citations: 14
+    citations: 19
     title: 'Parallelbench: Understanding the trade-offs of parallel decoding in diffusion llms'
     year: '2025'
   G1EpeWYAAAAJ:UeHWp8X0CEIC:
     citations: 3
     title: 'State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models'
-    year: '2025'
-  G1EpeWYAAAAJ:W7OEmFMy1HYC:
-    citations: 6
-    title: Counting guidance for high fidelity text-to-image synthesis. In 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
     year: '2025'
   G1EpeWYAAAAJ:Y0pCki6q_DkC:
     citations: 1
@@ -31,14 +27,14 @@ papers:
     year: '2026'
   G1EpeWYAAAAJ:YsMSGLbcyi4C:
     citations: 0
-    title: Inference-Aligned SFT for Diffusion LLMs via Group-based Trajectory Sampling
+    title: 'CATS: Inference-aligned SFT for Diffusion LLMs via Context-sensitivity Aware Trajectory Sampling'
     year: Unknown Year
   G1EpeWYAAAAJ:qjMakFHDy7sC:
-    citations: 10
+    citations: 11
     title: Parameter-efficient fine-tuning of state space models
     year: '2024'
   G1EpeWYAAAAJ:u-x6o8ySG0sC:
-    citations: 109
+    citations: 114
     title: 'Focus on defocus: bridging the synthetic to real domain gap for depth estimation'
     year: '2020'
   G1EpeWYAAAAJ:zYLM7Y9cAGgC:
