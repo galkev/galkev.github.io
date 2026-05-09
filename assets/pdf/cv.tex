@@ -49,7 +49,7 @@
 
 \begin{center}
   {\Huge\bfseries Kevin Galim}\\[2pt]
-  {\normalsize\color{lightgray} Senior AI Research Engineer | Efficient LLM Inference, Generative Models, AI Systems}\\[2pt]
+  {\normalsize\color{lightgray} Senior AI Research Engineer | Efficient LLM Inference, Post-Training, AI Systems}\\[2pt]
   \small
   galimkevin@gmail.com $\cdot$
   \href{https://kevingalim.com}{kevingalim.com} $\cdot$
@@ -59,63 +59,50 @@
 \vspace{4pt}
 
 \section{Summary}
-Machine learning researcher specializing in efficient inference for large-scale generative models and LLM systems.
-
-Author of 10+ publications at major ML conferences including ICLR, ICML, ACL, CVPR, and ECCV. Research focuses on scalable inference algorithms, speculative decoding, and efficient training and deployment of large generative models.
+Machine learning researcher working on efficient LLM inference, post-training systems, and accelerator-aware generative model pipelines. First/co-first author of publications at ICLR, ICML, ACL, ECCV, and WACV, with work spanning KV-cache and prompt/context compression, diffusion LLM parallel decoding, and parameter-efficient adaptation for state space models.
 
 
 \section{Experience}
-\cvevent{Senior AI Research Engineer}{FuriosaAI}{Jun 2021 – Present}{Seoul, South Korea}
+\cvevent{Senior AI Research Engineer}{FuriosaAI}{Jun 2021 -- Present}{Seoul, South Korea}
 \begin{itemize}
   \item Conducted research on large-scale generative models and LLMs, including efficient inference (KV-cache optimization, diffusion LLMs), scalable training (PEFT, state space models), and advanced architectures.
+  \item Studied post-training systems including asynchronous OPD/RL-style pipelines, stale rollout effects, teacher-cache constraints, and throughput--quality trade-offs.
   \item Co-authored multiple first- and co-first-author papers in top-tier conferences: ICLR, ICML, ACL, CVPR, ECCV, and WACV.
   \item Designed end-to-end pipelines for training and evaluating LLMs, including accelerator-aware rollout generation and inference pipelines on custom AI hardware.
-  \item Built and demonstrated real-time computer vision demos on custom hardware at CVPR 2022 and 2023.
 \end{itemize}
 \vspace{6pt}
 
-\cvevent{AI/Computer vision research and development}{Funzin}{Mar 2020 – Jun 2021}{Seoul, South Korea}
+\cvevent{AI/Computer vision research and development}{Funzin}{Mar 2020 -- Jun 2021}{Seoul, South Korea}
 \begin{itemize}
-  \item Developed and trained deep learning models for object detection, road/sidewalk segmentation, and gesture detection using PyTorch and TensorFlow.
-  \item Built perception systems for an autonomous golf cart platform, including detection and segmentation pipelines.
+  \item Developed computer-vision models for object detection, segmentation, gesture detection, and autonomous golf cart perception.
   \item Optimized models for embedded deployment using TensorRT, OpenVINO, Coral, DSP acceleration, and ARM NEON.
-  \item Developed and calibrated a real-time OpenGL 3D surround-view system (SVM) for embedded hardware, demonstrated at CES 2021.
+  \item Built and demonstrated a real-time OpenGL 3D surround-view system at CES 2021.
 \end{itemize}
 \noindent\textit{\small Technologies: PyTorch, TensorFlow, C++, Python, TensorRT, OpenVINO, ARM NEON}
 \vspace{6pt}
 
-\cvevent{Web / AR Developer}{Freelance}{Aug 2019 – Mar 2020}{Munich}
+\cvevent{Web / AR Developer}{Freelance}{Aug 2019 -- Mar 2020}{Munich}
 \begin{itemize}
-  \item Built AR mobile applications using Unity3D.
-  \item Developed cloud-backed web applications using AWS and Google Cloud.
-  \item Created cross-platform mobile apps using Flutter.
+  \item Built AR mobile apps, cloud-backed web apps, and cross-platform mobile apps using Unity3D, Flutter, AWS, and Google Cloud.
 \end{itemize}
 \noindent\textit{\small Technologies: Unity3D, C\#, JavaScript, Flutter, AWS, Google Cloud}
 \vspace{6pt}
 
-\cvevent{C++/CUDA software engineer}{ARRI}{Aug 2015 – Sep 2016}{Munich}
+\cvevent{C++/CUDA software engineer}{ARRI}{Aug 2015 -- Sep 2016}{Munich}
 \begin{itemize}
-  \item Developed GPU-accelerated image processing algorithms using CUDA and OpenCL.
-  \item Built real-time visualization and image analysis tools using C++ and OpenGL.
-  \item Contributed to software used in professional digital cinema workflows.
+  \item Developed GPU-accelerated image-processing algorithms using CUDA and OpenCL.
+  \item Built C++/OpenGL visualization and image-analysis tools for digital cinema workflows.
 \end{itemize}
 \noindent\textit{\small Technologies: C++, CUDA, OpenGL, OpenCL}
 \vspace{6pt}
 
 
-\section{Education}
-\cvevent{Technical University of Munich}{Master's degree, Informatics: Games Engineering}{2016 – 2019}{}
-\noindent{\small\color{lightgray}Grade: 1.4 (German system)}
-\vspace{6pt}
-
-\cvevent{The University of Tokyo}{Research, Computer Graphics}{2017 – 2018}{}
-\vspace{6pt}
-
-\cvevent{Technical University of Munich}{Bachelor's degree, Informatics: Games Engineering}{2013 – 2016}{}
-\noindent{\small\color{lightgray}Grade: 1.6 (German system)}
-\vspace{6pt}
-
-
+\section{Ongoing Work}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{AsyncOPD: How Stale Can On-Policy Distillation Be?}.
+\textit{Submitted manuscript}, 2026.\\
+Studies stale rollouts, KL-direction sensitivity, teacher-cache constraints, estimator design, and throughput--quality trade-offs in asynchronous on-policy distillation pipelines.
+\end{itemize}
 
 \section{Publications}
 \subsection*{First-author / co-first-author publications}
@@ -159,12 +146,26 @@ Focus on Defocus: Bridging the Synthetic to Real Domain Gap for Depth Estimation
 \end{itemize}
 
 
+\section{Education}
+\cvevent{Technical University of Munich}{Master's degree, Informatics: Games Engineering}{2016 -- 2019}{}
+\noindent{\small\color{lightgray}Grade: 1.4 (German system)}
+\vspace{6pt}
+
+\cvevent{The University of Tokyo}{Research, Computer Graphics}{2017 -- 2018}{}
+\vspace{6pt}
+
+\cvevent{Technical University of Munich}{Bachelor's degree, Informatics: Games Engineering}{2013 -- 2016}{}
+\noindent{\small\color{lightgray}Grade: 1.6 (German system)}
+\vspace{6pt}
+
+
 \section{Skills}
 
 \noindent
-\textbf{Machine Learning:} LLMs $\cdot$ Diffusion Models $\cdot$ Parameter-Efficient Fine-Tuning $\cdot$ State Space Models $\cdot$ Reinforcement Learning \\[2pt]
-\textbf{Systems \& Optimization:} LLM Inference Optimization $\cdot$ CUDA $\cdot$ C++ $\cdot$ PyTorch \\[2pt]
-\textbf{Computer Vision:} Depth Estimation $\cdot$ Segmentation $\cdot$ Object Detection
+\textbf{LLM Inference \& Post-Training:} Speculative Decoding $\cdot$ KV-Cache Optimization $\cdot$ Prompt/Context Compression $\cdot$ On-Policy Distillation $\cdot$ Efficient Inference \\[2pt]
+\textbf{Machine Learning Research:} Large Language Models $\cdot$ Diffusion Models $\cdot$ Parameter-Efficient Fine-Tuning $\cdot$ State Space Models $\cdot$ Diffusion LLMs \\[2pt]
+\textbf{Computer Vision:} Object Detection $\cdot$ Image Segmentation $\cdot$ Depth Estimation $\cdot$ Generative Models \\[2pt]
+\textbf{Programming:} Python $\cdot$ C++ $\cdot$ CUDA $\cdot$ PyTorch $\cdot$ TensorFlow $\cdot$ JavaScript
 \section{Languages}
 \noindent English (Full professional proficiency) $\cdot$ German (Native or bilingual proficiency) $\cdot$ Korean (Professional working proficiency)
 

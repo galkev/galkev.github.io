@@ -1,9 +1,12 @@
 cv:
   name: Kevin Galim
   label: Senior AI Research Engineer
+  tagline: Senior AI Research Engineer | Efficient LLM Inference, Post-Training, AI Systems
   email: "galimkevin@gmail.com"
+  website: https://kevingalim.com
+  google_scholar: https://scholar.google.com/citations?user=G1EpeWYAAAAJ
   location: Seoul, South Korea
-  summary: Machine learning researcher specializing in efficient inference for large-scale generative models and LLM systems. Author of 10+ publications at major ML conferences including ICLR, ICML, ACL, CVPR, ECCV, and WACV.
+  summary: Machine learning researcher working on efficient LLM inference, post-training systems, and accelerator-aware generative model pipelines. First/co-first author of publications at ICLR, ICML, ACL, ECCV, and WACV, with work spanning KV-cache and prompt/context compression, diffusion LLM parallel decoding, and parameter-efficient adaptation for state space models.
 
   social_networks:
     - network: LinkedIn
@@ -19,9 +22,9 @@ cv:
         summary: 
         highlights:
           - Conducted research on large-scale generative models and LLMs, including efficient inference (KV-cache optimization, diffusion LLMs), scalable training (PEFT, state space models), and advanced architectures.
+          - Studied post-training systems including asynchronous OPD/RL-style pipelines, stale rollout effects, teacher-cache constraints, and throughput--quality trade-offs.
           - Co-authored multiple first- and co-first-author papers in top-tier conferences (ICLR, ICML, ACL, CVPR, ECCV, WACV).
           - Designed end-to-end pipelines for training and evaluating LLMs, including accelerator-aware rollout generation and inference pipelines on custom AI hardware.
-          - Built and demonstrated real-time computer vision demos on custom hardware at CVPR 2022 and 2023.
 
       - company: Funzin
         position: AI / Computer Vision Research and Development Engineer
@@ -30,10 +33,9 @@ cv:
         end_date: 2021-06-01
         summary: Worked on applied computer vision systems and deep learning models for autonomous and embedded platforms.
         highlights:
-          - Developed and trained deep learning models for object detection, road/sidewalk segmentation, and gesture detection using PyTorch and TensorFlow.
-          - Built perception systems for an autonomous golf cart platform, including detection and segmentation pipelines.
-          - Optimized models for embedded deployment using TensorRT, OpenVINO, Coral, DSP acceleration, and ARM NEON.
-          - Developed and calibrated a real-time OpenGL 3D surround-view system (SVM) for embedded hardware, demonstrated at CES 2021.
+        - Developed computer-vision models for object detection, segmentation, gesture detection, and autonomous golf cart perception.
+        - Optimized models for embedded deployment using TensorRT, OpenVINO, Coral, DSP acceleration, and ARM NEON.
+        - Built and demonstrated a real-time OpenGL 3D surround-view system at CES 2021.
 
       - company: Dowosoft | Premium Software Development
         position: Web / AR Developer (Freelance)
@@ -41,9 +43,7 @@ cv:
         start_date: 2019-08-01
         end_date: 2020-03-01
         highlights:
-          - Built AR mobile applications using Unity3D.
-          - Developed cloud-backed web applications using AWS and Google Cloud.
-          - Created cross-platform mobile apps using Flutter.
+          - Built AR mobile apps, cloud-backed web apps, and cross-platform mobile apps using Unity3D, Flutter, AWS, and Google Cloud.
 
       - company: ARRI
         position: C++ / CUDA Software Engineer
@@ -51,9 +51,8 @@ cv:
         start_date: 2015-08-01
         end_date: 2016-09-01
         highlights:
-          - Developed GPU-accelerated image processing algorithms using CUDA and OpenCL.
-          - Built real-time visualization and image analysis tools using C++ and OpenGL.
-          - Contributed to software used in professional digital cinema workflows.
+          - Developed GPU-accelerated image-processing algorithms using CUDA and OpenCL.
+          - Built C++/OpenGL visualization and image-analysis tools for digital cinema workflows.
 
     Education:
       - institution: Technical University of Munich
@@ -93,6 +92,7 @@ cv:
     Ongoing Work:
       - title: "AsyncOPD: How Stale Can On-Policy Distillation Be?"
         status: "Submitted manuscript"
+        year: 2026
         summary: "Studies stale rollouts, KL-direction sensitivity, teacher-cache constraints, estimator design, and throughput–quality trade-offs in asynchronous on-policy distillation pipelines."
 
     Publications:
@@ -228,25 +228,21 @@ cv:
 
 
     Skills:
-      - name: LLM Inference Optimization
+      - name: LLM Inference & Post-Training
         level: Expert
-        keywords: "Speculative Decoding, KV-Cache Optimization, Diffusion LLMs, Efficient Inference"
+        keywords: "Speculative Decoding, KV-Cache Optimization, Prompt/Context Compression, On-Policy Distillation, Efficient Inference"
 
       - name: Machine Learning Research
         level: Expert
-        keywords: "Parameter-Efficient Fine-Tuning, State Space Models, Large Language Models, Diffusion Models"
+        keywords: "Large Language Models, Diffusion Models, Parameter-Efficient Fine-Tuning, State Space Models, Diffusion LLMs"
 
       - name: Computer Vision
         level: Expert
-        keywords: "Object Detection, Depth Estimation, Image Segmentation, Generative Models"
-
-      - name: Systems & Hardware
-        level: Advanced
-        keywords: "CUDA, TensorRT, OpenVINO, ARM NEON, Custom AI Accelerators"
+        keywords: "Object Detection, Image Segmentation, Depth Estimation, Generative Models"
 
       - name: Programming
         level: Expert
-        keywords: "Python, PyTorch, C++, CUDA, TensorFlow, JavaScript"
+        keywords: "Python, C++, CUDA, PyTorch, TensorFlow, JavaScript"
 
     Languages:
       - name: German

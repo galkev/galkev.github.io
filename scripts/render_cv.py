@@ -81,6 +81,10 @@ LATEX_SPECIAL_CHARS = {
     "}": r"\}",
     "~": r"\textasciitilde{}",
     "^": r"\textasciicircum{}",
+    "–": "--",
+    "—": "---",
+    "−": "-",
+    "‑": "-",
 }
 
 
@@ -110,8 +114,6 @@ def tex_paragraph(value: Any) -> str:
     # **foo** -> \textbf{foo}
     text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
 
-    # Convert en dash/em dash-like unicode safely; LaTeX with utf8 usually works,
-    # but this keeps output cleaner.
     return text
 
 
@@ -218,6 +220,66 @@ def author_list(value: Any) -> str:
             text = "Laura Leal-Taixe"
         authors.append(text.rstrip("."))
     return ", ".join(authors)
+
+
+def normalize_ongoing_work(value: Any) -> list[dict[str, Any]]:
+    entries = []
+    for row in as_list(value):
+        if not isinstance(row, dict):
+            continue
+        status = str(row.get("status", ""))
+        venue = str(row.get("venue", ""))
+        if status.lower() == "submitted manuscript":
+            status_text = "Submitted manuscript"
+        elif status and venue and venue not in status:
+            status_text = f"{status}, {venue}"
+        else:
+            status_text = status or venue
+
+        entries.append(
+            {
+                "title": row.get("title", ""),
+                "status": status_text,
+                "year": row.get("year") or row.get("releaseDate") or row.get("date") or "",
+                "summary": row.get("summary") or row.get("description") or "",
+            }
+        )
+    return entries
+
+
+def normalize_rendercv_summary(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value if str(item)]
+    if value:
+        return [str(value)]
+    return []
+
+
+def normalize_rendercv_skills(value: Any) -> list[dict[str, Any]]:
+    skills = []
+    for row in as_list(value):
+        if not isinstance(row, dict):
+            continue
+        category = row.get("category") or row.get("name")
+        items = row.get("items") or row.get("keywords")
+        if not category:
+            continue
+        skills.append({"category": str(category), "items": split_items(items)})
+    return skills
+
+
+def rendercv_social_url(source: dict[str, Any], network_name: str) -> str:
+    for item in as_list(source.get("social_networks")):
+        if not isinstance(item, dict):
+            continue
+        if str(item.get("network", "")).lower() != network_name.lower():
+            continue
+        if item.get("url"):
+            return str(item["url"])
+        username = item.get("username")
+        if username and network_name.lower() == "linkedin":
+            return f"https://www.linkedin.com/in/{username}/"
+    return ""
 
 
 def section_by_title(sections: list[dict[str, Any]], *names: str) -> dict[str, Any] | None:
@@ -389,25 +451,12 @@ def normalize_rendercv(data: dict[str, Any]) -> dict[str, Any] | None:
     if other:
         publications.append({"heading": "Other publications", "items": other})
 
-    summary = [
-        "Machine learning researcher specializing in efficient inference for large-scale generative models and LLM systems.",
-        "Author of 10+ publications at major ML conferences including ICLR, ICML, ACL, CVPR, and ECCV. Research focuses on scalable inference algorithms, speculative decoding, and efficient training and deployment of large generative models.",
-    ]
+    ongoing_work = normalize_ongoing_work(
+        sections.get("Ongoing Work") or sections.get("Selected Ongoing Work")
+    )
 
-    skills = [
-        {
-            "category": "Machine Learning",
-            "items": [
-                "LLMs",
-                "Diffusion Models",
-                "Parameter-Efficient Fine-Tuning",
-                "State Space Models",
-                "Reinforcement Learning",
-            ],
-        },
-        {"category": "Systems & Optimization", "items": ["LLM Inference Optimization", "CUDA", "C++", "PyTorch"]},
-        {"category": "Computer Vision", "items": ["Depth Estimation", "Segmentation", "Object Detection"]},
-    ]
+    summary = normalize_rendercv_summary(source.get("summary"))
+    skills = normalize_rendercv_skills(sections.get("Skills"))
 
     language_order = ["English", "German", "Korean"]
     language_map = {
@@ -421,20 +470,28 @@ def normalize_rendercv(data: dict[str, Any]) -> dict[str, Any] | None:
         if name in language_map
     )
 
-    email = source.get("email", "galimkevin@gmail.com")
+    email = source.get("email", "")
+    website = source.get("website", "")
+    scholar = source.get("google_scholar", "")
+    linkedin = rendercv_social_url(source, "LinkedIn")
+    contacts = []
+    if email:
+        contacts.append({"label": email})
+    if website:
+        contacts.append({"label": str(website).removeprefix("https://").removeprefix("http://"), "url": website})
+    if scholar:
+        contacts.append({"label": "scholar.google.com", "url": scholar})
+    if linkedin:
+        contacts.append({"label": str(linkedin).removeprefix("https://www.").removeprefix("https://"), "url": linkedin})
+
     return {
-        "name": source.get("name", "Kevin Galim"),
-        "tagline": "Senior AI Research Engineer | Efficient LLM Inference, Generative Models, AI Systems",
-        "contacts": [
-            {"label": email},
-            {"label": "kevingalim.com", "url": "https://kevingalim.com"},
-            {"label": "scholar.google.com", "url": "https://scholar.google.com/citations?user=G1EpeWYAAAAJ"},
-            {"label": "linkedin.com/in/kgalim/", "url": "https://www.linkedin.com/in/kgalim/"},
-        ],
+        "name": source.get("name", ""),
+        "tagline": source.get("tagline") or source.get("label", ""),
+        "contacts": contacts,
         "summary": summary,
         "experience": experience,
         "education": education,
-        "ongoing_work": data.get("ongoing_work", []),
+        "ongoing_work": ongoing_work,
         "publications": publications,
         "skills": skills,
         "languages": languages,
@@ -453,11 +510,8 @@ def normalize_cv(data: dict[str, Any]) -> dict[str, Any]:
 
     if "name" in data or "experience" in data or "publications" in data:
         cv = {
-            "name": data.get("name", "Kevin Galim"),
-            "tagline": data.get(
-                "tagline",
-                "Senior AI Research Engineer | Efficient LLM Inference, Generative Models, AI Systems",
-            ),
+            "name": data.get("name", ""),
+            "tagline": data.get("tagline") or data.get("label", ""),
             "contacts": data.get("contacts", []),
             "summary": as_list(data.get("summary")),
             "experience": data.get("experience", []),
@@ -511,24 +565,25 @@ def normalize_cv(data: dict[str, Any]) -> dict[str, Any]:
                 items.append({"authors": "", "title": str(row), "venue": "", "year": ""})
         publications.append({"heading": "Publications", "items": items})
 
-    name = general.get("full name") or general.get("name") or data.get("name") or "Kevin Galim"
-    email = general.get("email", "galimkevin@gmail.com")
-    website = general.get("website", "https://kevingalim.com")
-    scholar = general.get("google scholar", "https://scholar.google.com/citations?user=G1EpeWYAAAAJ")
-    linkedin = general.get("linkedin", "https://www.linkedin.com/in/kgalim/")
+    name = general.get("full name") or general.get("name") or data.get("name") or ""
+    email = general.get("email") or data.get("email") or ""
+    website = general.get("website") or data.get("website") or ""
+    scholar = general.get("google scholar") or data.get("google_scholar") or ""
+    linkedin = general.get("linkedin") or data.get("linkedin") or ""
+    contacts = []
+    if email:
+        contacts.append({"label": email})
+    if website:
+        contacts.append({"label": str(website).removeprefix("https://").removeprefix("http://"), "url": website})
+    if scholar:
+        contacts.append({"label": "scholar.google.com", "url": scholar})
+    if linkedin:
+        contacts.append({"label": str(linkedin).removeprefix("https://www.").removeprefix("https://"), "url": linkedin})
 
     return {
         "name": name,
-        "tagline": data.get(
-            "tagline",
-            "Senior AI Research Engineer | Efficient LLM Inference, Generative Models, AI Systems",
-        ),
-        "contacts": [
-            {"label": email},
-            {"label": "kevingalim.com", "url": website},
-            {"label": "scholar.google.com", "url": scholar},
-            {"label": "linkedin.com/in/kgalim/", "url": linkedin},
-        ],
+        "tagline": data.get("tagline") or data.get("label", ""),
+        "contacts": contacts,
         "summary": summary,
         "experience": experience,
         "education": education,

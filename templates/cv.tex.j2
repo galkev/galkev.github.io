@@ -86,23 +86,15 @@
 {% endfor %}
 {% endif %}
 
-{% if cv.education %}
-\section{Education}
-{% for item in cv.education %}
-\cvevent{ {{- item.institution | tex -}} }{ {{- item.degree | tex -}} }{ {{- item.dates | tex -}} }{ {{- item.location | tex -}} }
-{% if item.details %}
-\noindent{\small\color{lightgray}{{ item.details | tex }}}
-{% endif %}
-\vspace{6pt}
-
-{% endfor %}
-{% endif %}
-
 {% if cv.ongoing_work %}
 \section{Ongoing Work}
 \begin{itemize}[leftmargin=1.2em]
 {% for item in cv.ongoing_work %}
-  \item \textbf{ {{- item.title | tex -}} }. {{ item.description | tex_paragraph }}
+  \item \textbf{ {{- item.title | tex -}} }.
+{% if item.status or item.year %}
+\textit{ {{- item.status | tex -}} }{% if item.year %}, {{ item.year | tex }}{% endif %}.\\
+{% endif %}
+{{ item.summary | tex_paragraph }}
 {% endfor %}
 \end{itemize}
 {% endif %}
@@ -119,6 +111,18 @@
 \textit{ {{- pub.venue | tex -}} }{% if pub.year %}, {{ pub.year | tex }}{% endif %}.
 {% endfor %}
 \end{itemize}
+
+{% endfor %}
+{% endif %}
+
+{% if cv.education %}
+\section{Education}
+{% for item in cv.education %}
+\cvevent{ {{- item.institution | tex -}} }{ {{- item.degree | tex -}} }{ {{- item.dates | tex -}} }{ {{- item.location | tex -}} }
+{% if item.details %}
+\noindent{\small\color{lightgray}{{ item.details | tex }}}
+{% endif %}
+\vspace{6pt}
 
 {% endfor %}
 {% endif %}

@@ -1,0 +1,68 @@
+{% comment %}
+  Ongoing work renderer for submitted/unpublished CV entries.
+{% endcomment %}
+
+<ul class="card-text font-weight-light list-group list-group-flush">
+  {% for entry in entries %}
+    <li class="list-group-item">
+      <div class="row">
+        {% capture work_year %}
+          {% if entry.year %}{{ entry.year }}{% elsif entry.releaseDate %}{{ entry.releaseDate }}{% elsif entry.date %}{{ entry.date }}{% endif %}
+        {% endcapture %}
+
+        {% if work_year != '' %}
+          <div class="col-xs-2 col-sm-2 col-md-2 text-center">
+            <table class="table-cv">
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
+                      {{- work_year | split: '-' | slice: 0, 1 | join: '' -}}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+        {% else %}
+          <div class="col-xs-12 col-sm-12 col-md-12">
+        {% endif %}
+            {% if entry.title %}
+              <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
+            {% endif %}
+
+            {% if entry.status %}
+              {% assign normalized_status = entry.status | downcase %}
+              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
+                <em>
+                  {% if normalized_status == 'submitted manuscript' %}
+                    Submitted manuscript.
+                  {% elsif entry.venue %}
+                    {{ entry.status }}{% unless entry.status contains entry.venue %}, {{ entry.venue }}{% endunless %}.
+                  {% else %}
+                    {{ entry.status }}.
+                  {% endif %}
+                </em>
+              </h6>
+            {% elsif entry.venue %}
+              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem"><em>{{ entry.venue }}</em></h6>
+            {% endif %}
+
+            {% if entry.summary %}
+              <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+            {% endif %}
+
+            {% if entry.links %}
+              <p class="ml-1 ml-md-4">
+                {% for link in entry.links %}
+                  <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label | default: link.name | default: link.url }}</a>
+                  {%- unless forloop.last %} · {% endunless -%}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

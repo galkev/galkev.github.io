@@ -18,7 +18,7 @@ selected_papers: true
 social: true
 ---
 
-I am a Senior AI Research Engineer at [FuriosaAI](https://furiosa.ai), where I work on efficient LLM inference, post-training systems, and accelerator-aware training/inference pipelines. My research sits at the intersection of **efficient inference**, **generative modeling**, and **AI systems**.
+I am a Senior AI Research Engineer at [FuriosaAI](https://furiosa.ai), where I work on efficient LLM inference, post-training systems, and accelerator-aware training/inference pipelines. My research sits at the intersection of **efficient inference**, **post-training**, and **AI systems**.
 
 I have authored 10+ publications at venues including **ICLR**, **ICML**, **ACL**, **CVPR**, **ECCV**, and **WACV**, with work spanning KV-cache and prompt/context compression, parameter-efficient adaptation for state space models, and diffusion LLMs with parallel decoding.
 
