@@ -14,6 +14,8 @@ nav_order: 2
 
 <div class="publications">
 
+<p class="text-muted small">* denotes equal contribution.</p>
+
 {% bibliography %}
 
 </div>
