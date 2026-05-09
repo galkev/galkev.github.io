@@ -20,7 +20,7 @@ cv:
         highlights:
           - Conducted research on large-scale generative models and LLMs, including efficient inference (KV-cache optimization, diffusion LLMs), scalable training (PEFT, state space models), and advanced architectures.
           - Co-authored multiple first- and co-first-author papers in top-tier conferences (ICLR, ICML, ACL, CVPR, ECCV, WACV).
-          - Designed end-to-end pipelines for training, evaluating, and deploying LLMs on custom AI accelerators.
+          - Designed end-to-end pipelines for training and evaluating LLMs, including accelerator-aware rollout generation and inference pipelines on custom AI hardware.
           - Built and demonstrated real-time computer vision demos on custom hardware at CVPR 2022 and 2023.
 
       - company: Funzin
@@ -89,6 +89,11 @@ cv:
         highlights:
           - "Bachelor's Thesis: Preconditioners for Tikhonov Regularization in Image Deblurring."
           - Research focused on numerical optimization and inverse problems in image restoration.
+
+    Ongoing Work:
+      - title: "AsyncOPD: How Stale Can On-Policy Distillation Be?"
+        status: "Submitted manuscript"
+        summary: "Studies stale rollouts, KL-direction sensitivity, teacher-cache constraints, estimator design, and throughput–quality trade-offs in asynchronous on-policy distillation pipelines."
 
     Publications:
       - title: "Draft-based Approximate Inference for LLMs"

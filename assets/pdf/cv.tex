@@ -1,0 +1,171 @@
+\documentclass[10pt,a4paper]{article}
+
+%% Packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% lmodern not required — using default CM fonts
+\usepackage[margin=1.8cm, top=1.6cm, bottom=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+% microtype requires scalable fonts; omit if using bitmap fonts
+
+%% Colors
+\definecolor{accent}{RGB}{0, 90, 160}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+%% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent,
+}
+
+%% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.8pt}\vspace{2pt}]
+
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+%% List formatting
+\setlist[itemize]{leftmargin=1.4em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+%% Custom commands
+\newcommand{\cvevent}[4]{%
+  \noindent\textbf{#1}\hfill{\small\color{lightgray}#3}\\
+  \textit{#2}\hfill{\small\color{lightgray}#4}
+  \vspace{2pt}
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries Kevin Galim}\\[2pt]
+  {\normalsize\color{lightgray} Senior AI Research Engineer | Efficient LLM Inference, Generative Models, AI Systems}\\[2pt]
+  \small
+  galimkevin@gmail.com $\cdot$
+  \href{https://kevingalim.com}{kevingalim.com} $\cdot$
+  \href{https://scholar.google.com/citations?user=G1EpeWYAAAAJ}{scholar.google.com} $\cdot$
+  \href{https://www.linkedin.com/in/kgalim/}{linkedin.com/in/kgalim/}
+\end{center}
+\vspace{4pt}
+
+\section{Summary}
+Machine learning researcher specializing in efficient inference for large-scale generative models and LLM systems.
+
+Author of 10+ publications at major ML conferences including ICLR, ICML, ACL, CVPR, and ECCV. Research focuses on scalable inference algorithms, speculative decoding, and efficient training and deployment of large generative models.
+
+
+\section{Experience}
+\cvevent{Senior AI Research Engineer}{FuriosaAI}{Jun 2021 – Present}{Seoul, South Korea}
+\begin{itemize}
+  \item Conducted research on large-scale generative models and LLMs, including efficient inference (KV-cache optimization, diffusion LLMs), scalable training (PEFT, state space models), and advanced architectures.
+  \item Co-authored multiple first- and co-first-author papers in top-tier conferences: ICLR, ICML, ACL, CVPR, ECCV, and WACV.
+  \item Designed end-to-end pipelines for training and evaluating LLMs, including accelerator-aware rollout generation and inference pipelines on custom AI hardware.
+  \item Built and demonstrated real-time computer vision demos on custom hardware at CVPR 2022 and 2023.
+\end{itemize}
+\vspace{6pt}
+
+\cvevent{AI/Computer vision research and development}{Funzin}{Mar 2020 – Jun 2021}{Seoul, South Korea}
+\begin{itemize}
+  \item Developed and trained deep learning models for object detection, road/sidewalk segmentation, and gesture detection using PyTorch and TensorFlow.
+  \item Built perception systems for an autonomous golf cart platform, including detection and segmentation pipelines.
+  \item Optimized models for embedded deployment using TensorRT, OpenVINO, Coral, DSP acceleration, and ARM NEON.
+  \item Developed and calibrated a real-time OpenGL 3D surround-view system (SVM) for embedded hardware, demonstrated at CES 2021.
+\end{itemize}
+\noindent\textit{\small Technologies: PyTorch, TensorFlow, C++, Python, TensorRT, OpenVINO, ARM NEON}
+\vspace{6pt}
+
+\cvevent{Web / AR Developer}{Freelance}{Aug 2019 – Mar 2020}{Munich}
+\begin{itemize}
+  \item Built AR mobile applications using Unity3D.
+  \item Developed cloud-backed web applications using AWS and Google Cloud.
+  \item Created cross-platform mobile apps using Flutter.
+\end{itemize}
+\noindent\textit{\small Technologies: Unity3D, C\#, JavaScript, Flutter, AWS, Google Cloud}
+\vspace{6pt}
+
+\cvevent{C++/CUDA software engineer}{ARRI}{Aug 2015 – Sep 2016}{Munich}
+\begin{itemize}
+  \item Developed GPU-accelerated image processing algorithms using CUDA and OpenCL.
+  \item Built real-time visualization and image analysis tools using C++ and OpenGL.
+  \item Contributed to software used in professional digital cinema workflows.
+\end{itemize}
+\noindent\textit{\small Technologies: C++, CUDA, OpenGL, OpenCL}
+\vspace{6pt}
+
+
+\section{Education}
+\cvevent{Technical University of Munich}{Master's degree, Informatics: Games Engineering}{2016 – 2019}{}
+\noindent{\small\color{lightgray}Grade: 1.4 (German system)}
+\vspace{6pt}
+
+\cvevent{The University of Tokyo}{Research, Computer Graphics}{2017 – 2018}{}
+\vspace{6pt}
+
+\cvevent{Technical University of Munich}{Bachelor's degree, Informatics: Games Engineering}{2013 – 2016}{}
+\noindent{\small\color{lightgray}Grade: 1.6 (German system)}
+\vspace{6pt}
+
+
+
+\section{Publications}
+\subsection*{First-author / co-first-author publications}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Kevin Galim}*, Ethan Ewer*, Wonjun Kang, Minjae Lee, Hyung Il Koo, Kangwook Lee.
+Draft-based Approximate Inference for LLMs.
+\textit{ICLR}, 2026.
+  \item Wonjun Kang*, \textbf{Kevin Galim}*, Seunghyuk Oh*, Minjae Lee, Yuchen Zeng, Shuibai Zhang, Coleman Hooper, Yuezhou Hu, Hyung Il Koo, Nam Ik Cho, et al.
+ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs.
+\textit{ICLR}, 2026.
+  \item Wonjun Kang*, \textbf{Kevin Galim}*, Yuchen Zeng*, Minjae Lee, Hyung Il Koo, Nam Ik Cho.
+State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models.
+\textit{ACL}, 2025.
+  \item \textbf{Kevin Galim}*, Wonjun Kang*, Yuchen Zeng*, Hyung Il Koo, Kangwook Lee.
+Parameter-Efficient Fine-Tuning of State Space Models.
+\textit{ICML}, 2025.
+  \item Wonjun Kang*, \textbf{Kevin Galim}*, Hyung Il Koo, Nam Ik Cho.
+Counting Guidance for High Fidelity Text-to-Image Synthesis.
+\textit{WACV (Oral)}, 2025.
+  \item Wonjun Kang*, \textbf{Kevin Galim}*, Hyung Il Koo.
+Eta Inversion: Designing an Optimal Eta Function for Diffusion-based Real Image Editing.
+\textit{ECCV}, 2024.
+\end{itemize}
+
+\subsection*{Other publications}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item Seunghyuk Oh, Minjae Lee, \textbf{Kevin Galim}, Minseo Kim, Hyung Koo, Wonjun Kang, Hanbaek Lyu, Kangwook Lee.
+Inference-Aligned SFT for Diffusion LLMs via Group-based Trajectory Sampling.
+\textit{ICLR DeLTa Workshop}, 2026.
+  \item Minjae Lee*, Wonjun Kang*, Byeongkeun Ahn, Christian Classen, \textbf{Kevin Galim}, Seunghyuk Oh, Minghao Yan, Hyung Il Koo, Kangwook Lee.
+TABED: Test-Time Adaptive Ensemble Drafting for Robust Speculative Decoding in LVLMs.
+\textit{EACL}, 2026.
+  \item Wonjun Kang, Byeongkeun Ahn, Minjae Lee, \textbf{Kevin Galim}, Seunghyuk Oh, Hyung Il Koo, Nam Ik Cho.
+UNCAGE: Contrastive Attention Guidance for Masked Generative Transformers in Text-to-Image Generation.
+\textit{IEEE Access}, 2026.
+  \item Maxim Maximov, \textbf{Kevin Galim}, Laura Leal-Taixe.
+Focus on Defocus: Bridging the Synthetic to Real Domain Gap for Depth Estimation.
+\textit{CVPR}, 2020.
+\end{itemize}
+
+
+\section{Skills}
+
+\noindent
+\textbf{Machine Learning:} LLMs $\cdot$ Diffusion Models $\cdot$ Parameter-Efficient Fine-Tuning $\cdot$ State Space Models $\cdot$ Reinforcement Learning \\[2pt]
+\textbf{Systems \& Optimization:} LLM Inference Optimization $\cdot$ CUDA $\cdot$ C++ $\cdot$ PyTorch \\[2pt]
+\textbf{Computer Vision:} Depth Estimation $\cdot$ Segmentation $\cdot$ Object Detection
+\section{Languages}
+\noindent English (Full professional proficiency) $\cdot$ German (Native or bilingual proficiency) $\cdot$ Korean (Professional working proficiency)
+
+\end{document}
