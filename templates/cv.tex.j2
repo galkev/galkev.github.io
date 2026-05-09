@@ -1,0 +1,145 @@
+\documentclass[10pt,a4paper]{article}
+
+%% Packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% lmodern not required — using default CM fonts
+\usepackage[margin=1.8cm, top=1.6cm, bottom=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+% microtype requires scalable fonts; omit if using bitmap fonts
+
+%% Colors
+\definecolor{accent}{RGB}{0, 90, 160}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+%% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+    linkcolor=accent,
+}
+
+%% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.8pt}\vspace{2pt}]
+
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+%% List formatting
+\setlist[itemize]{leftmargin=1.4em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+%% Custom commands
+{% raw -%}
+\newcommand{\cvevent}[4]{%
+  \noindent\textbf{#1}\hfill{\small\color{lightgray}#3}\\
+  \textit{#2}\hfill{\small\color{lightgray}#4}
+  \vspace{2pt}
+}
+{% endraw %}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries {{ cv.name | tex }}}\\[2pt]
+  {\normalsize\color{lightgray} {{ cv.tagline | tex }}}\\[2pt]
+  \small
+{% for contact in cv.contact_lines %}
+  {{ contact }}
+{% endfor %}
+\end{center}
+\vspace{4pt}
+
+{% if cv.summary %}
+\section{Summary}
+{% for paragraph in cv.summary %}
+{{ paragraph | tex_paragraph }}
+
+{% endfor %}
+{% endif %}
+
+{% if cv.experience %}
+\section{Experience}
+{% for item in cv.experience %}
+\cvevent{ {{- item.role | tex -}} }{ {{- item.organization | tex -}} }{ {{- item.dates | tex -}} }{ {{- item.location | tex -}} }
+{% if item.bullets %}
+\begin{itemize}
+{% for bullet in item.bullets %}
+  \item {{ bullet | tex_paragraph }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+{% if item.technologies %}
+\noindent\textit{\small Technologies: {{ item.technologies | join(', ') | tex }}}
+{% endif %}
+\vspace{6pt}
+
+{% endfor %}
+{% endif %}
+
+{% if cv.ongoing_work %}
+\section{Ongoing Work}
+\begin{itemize}[leftmargin=1.2em]
+{% for item in cv.ongoing_work %}
+  \item \textbf{ {{- item.title | tex -}} }.
+{% if item.status or item.year %}
+\textit{ {{- item.status | tex -}} }{% if item.year %}, {{ item.year | tex }}{% endif %}.\\
+{% endif %}
+{{ item.summary | tex_paragraph }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+
+{% if cv.publications %}
+\section{Publications}
+{% for group in cv.publications %}
+\subsection*{ {{- group.heading | tex -}} }
+
+\begin{itemize}[leftmargin=1.2em]
+{% for pub in group["items"] %}
+  \item {{ pub.authors | tex_authors }}.
+{{ pub.title | tex_paragraph }}.
+\textit{ {{- pub.venue | tex -}} }{% if pub.year %}, {{ pub.year | tex }}{% endif %}.
+{% endfor %}
+\end{itemize}
+
+{% endfor %}
+{% endif %}
+
+{% if cv.education %}
+\section{Education}
+{% for item in cv.education %}
+\cvevent{ {{- item.institution | tex -}} }{ {{- item.degree | tex -}} }{ {{- item.dates | tex -}} }{ {{- item.location | tex -}} }
+{% if item.details %}
+\noindent{\small\color{lightgray}{{ item.details | tex }}}
+{% endif %}
+\vspace{6pt}
+
+{% endfor %}
+{% endif %}
+
+{% if cv.skills %}
+\section{Skills}
+
+\noindent
+{% for skill in cv.skills %}
+\textbf{ {{- skill.category | tex -}}:} {{ skill["items"] | tex_dot_list }}{% if not loop.last %} \\[2pt]
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if cv.languages %}
+\section{Languages}
+\noindent {{ cv.languages | tex_dot_list }}
+{% endif %}
+
+\end{document}
