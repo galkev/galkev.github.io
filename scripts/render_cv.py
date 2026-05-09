@@ -398,14 +398,6 @@ def normalize_rendercv(data: dict[str, Any]) -> dict[str, Any] | None:
                 for bullet in bullets
             ]
 
-        technologies: list[str] = []
-        if company == "Funzin":
-            technologies = ["PyTorch", "TensorFlow", "C++", "Python", "TensorRT", "OpenVINO", "ARM NEON"]
-        elif company == "Freelance":
-            technologies = ["Unity3D", "C#", "JavaScript", "Flutter", "AWS", "Google Cloud"]
-        elif company == "ARRI":
-            technologies = ["C++", "CUDA", "OpenGL", "OpenCL"]
-
         experience.append(
             {
                 "role": position,
@@ -413,7 +405,7 @@ def normalize_rendercv(data: dict[str, Any]) -> dict[str, Any] | None:
                 "dates": format_date_range(row.get("start_date"), row.get("end_date")),
                 "location": location,
                 "bullets": bullets,
-                "technologies": technologies,
+                "technologies": split_items(row.get("technologies")),
             }
         )
 
