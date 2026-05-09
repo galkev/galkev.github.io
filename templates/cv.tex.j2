@@ -100,7 +100,8 @@
 {% endif %}
 
 {% if cv.publications %}
-\section{Publications}
+\section{Publications {\normalfont\small (* denotes equal contribution)}}
+
 {% for group in cv.publications %}
 \subsection*{ {{- group.heading | tex -}} }
 
