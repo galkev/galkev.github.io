@@ -16,6 +16,7 @@ Install:
 Usage:
   python scripts/render_cv.py
   python scripts/render_cv.py --no-pdf
+  python scripts/render_cv.py --all
   python scripts/render_cv.py --input _data/cv.yml --template templates/cv.tex.j2 --pdf assets/pdf/cv.pdf
 
 The script supports a simple normalized YAML shape. It also tries to convert common
@@ -35,12 +36,17 @@ from typing import Any
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
+from validate_cv_publications import DEFAULT_BIB, validate as validate_cv_publications
+
 
 DEFAULT_INPUT = Path("_data/cv.yml")
 DEFAULT_TEMPLATE = Path("templates/cv.tex.j2")
 DEFAULT_TEX = Path("build/cv.tex")
 DEFAULT_PDF = Path("assets/pdf/cv.pdf")
 DEFAULT_ASSET_TEX = DEFAULT_PDF.with_suffix(".tex")
+DEFAULT_VARIANTS_DIR = Path("untracked/cv")
+DEFAULT_OUTPUT_DIR = Path("untracked/cv-output")
+DEFAULT_BIBLIOGRAPHY = DEFAULT_BIB
 DEFAULT_HIGHLIGHT_NAME = "Kevin Galim"
 
 MONTHS = {
@@ -649,7 +655,92 @@ def compile_pdf(tex_path: Path, pdf_path: Path, engine: str = "pdflatex") -> Non
         raise RuntimeError(f"Expected PDF was not produced: {built_pdf}")
 
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
+    if built_pdf.resolve() == pdf_path.resolve():
+        return
+
     shutil.copy2(built_pdf, pdf_path)
+
+
+def render_cv_file(
+    input_path: Path,
+    template_path: Path,
+    tex_path: Path,
+    asset_tex_path: Path | None,
+    pdf_path: Path | None,
+    engine: str,
+    highlight_name: str,
+    no_pdf: bool,
+    bib_path: Path,
+) -> None:
+    validation_status = validate_cv_publications(input_path, bib_path)
+    if validation_status != 0:
+        raise RuntimeError(f"CV publication validation failed for {input_path}")
+
+    tex_path = render_tex(input_path, template_path, tex_path, highlight_name)
+    print(f"Wrote LaTeX: {tex_path}")
+
+    if asset_tex_path:
+        copy_tex_to_asset(tex_path, asset_tex_path)
+        print(f"Wrote LaTeX copy: {asset_tex_path}")
+
+    if no_pdf or pdf_path is None:
+        return
+
+    try:
+        compile_pdf(tex_path, pdf_path, engine)
+        print(f"Wrote PDF: {pdf_path}")
+    except Exception as exc:
+        print(f"PDF compilation skipped/failed for {input_path}: {exc}")
+        print("You can compile manually, for example:")
+        print(f"  cd {tex_path.parent} && {engine} -interaction=nonstopmode -halt-on-error {tex_path.name}")
+
+
+def cv_variant_slug(path: Path, variants_dir: Path) -> str:
+    relative = path.relative_to(variants_dir).with_suffix("")
+    return "__".join(relative.parts)
+
+
+def find_cv_variants(variants_dir: Path) -> list[Path]:
+    if not variants_dir.exists():
+        return []
+    paths = [*variants_dir.rglob("*.yml"), *variants_dir.rglob("*.yaml")]
+    return sorted(path for path in paths if path.is_file())
+
+
+def render_all_cvs(args: argparse.Namespace) -> None:
+    render_cv_file(
+        input_path=args.input,
+        template_path=args.template,
+        tex_path=args.tex,
+        asset_tex_path=args.asset_tex,
+        pdf_path=args.pdf,
+        engine=args.engine,
+        highlight_name=args.highlight_name,
+        no_pdf=args.no_pdf,
+        bib_path=args.bib,
+    )
+
+    variants = find_cv_variants(args.variants_dir)
+    if not variants:
+        print(f"No private CV variants found in {args.variants_dir}")
+        return
+
+    for variant in variants:
+        slug = cv_variant_slug(variant, args.variants_dir)
+        tex_path = args.output_dir / f"{slug}.tex"
+        pdf_path = args.output_dir / f"{slug}.pdf"
+        print(f"\nRendering private CV variant: {variant}")
+        render_cv_file(
+            input_path=variant,
+            template_path=args.template,
+            tex_path=tex_path,
+            asset_tex_path=None,
+            pdf_path=pdf_path,
+            engine=args.engine,
+            highlight_name=args.highlight_name,
+            no_pdf=args.no_pdf,
+            bib_path=args.bib,
+        )
 
 
 def main() -> None:
@@ -662,23 +753,27 @@ def main() -> None:
     parser.add_argument("--engine", default="pdflatex", help="LaTeX engine: pdflatex, xelatex, lualatex")
     parser.add_argument("--highlight-name", default=DEFAULT_HIGHLIGHT_NAME)
     parser.add_argument("--no-pdf", action="store_true", help="Only generate .tex, do not compile PDF.")
+    parser.add_argument("--all", action="store_true", help="Render the canonical CV plus all private variants.")
+    parser.add_argument("--variants-dir", type=Path, default=DEFAULT_VARIANTS_DIR)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--bib", type=Path, default=DEFAULT_BIBLIOGRAPHY)
     args = parser.parse_args()
 
-    tex_path = render_tex(args.input, args.template, args.tex, args.highlight_name)
-    print(f"Wrote LaTeX: {tex_path}")
-    copy_tex_to_asset(tex_path, args.asset_tex)
-    print(f"Wrote LaTeX copy: {args.asset_tex}")
-
-    if args.no_pdf:
+    if args.all:
+        render_all_cvs(args)
         return
 
-    try:
-        compile_pdf(tex_path, args.pdf, args.engine)
-        print(f"Wrote PDF: {args.pdf}")
-    except Exception as exc:
-        print(f"PDF compilation skipped/failed: {exc}")
-        print("You can compile manually, for example:")
-        print(f"  cd {tex_path.parent} && {args.engine} -interaction=nonstopmode -halt-on-error {tex_path.name}")
+    render_cv_file(
+        input_path=args.input,
+        template_path=args.template,
+        tex_path=args.tex,
+        asset_tex_path=args.asset_tex,
+        pdf_path=args.pdf,
+        engine=args.engine,
+        highlight_name=args.highlight_name,
+        no_pdf=args.no_pdf,
+        bib_path=args.bib,
+    )
 
 
 if __name__ == "__main__":
