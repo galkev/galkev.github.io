@@ -32,6 +32,6 @@ Before joining FuriosaAI, I worked on applied computer vision at Funzin, includi
 - Accelerator-aware LLM systems: rollout generation, inference pipelines, and custom hardware integration
 
 **Ongoing work:**
-- **AsyncOPD: How Stale Can On-Policy Distillation Be?** Submitted manuscript. Studies stale rollouts, KL-direction sensitivity, teacher-cache constraints, estimator design, and throughput–quality trade-offs in asynchronous OPD pipelines.
+- **AsyncOPD: How Stale Can On-Policy Distillation Be?**. Studies stale rollouts, KL-direction sensitivity, teacher-cache constraints, estimator design, and throughput–quality trade-offs in asynchronous OPD pipelines.
 
 **Languages:** German (native) · English (fluent) · Korean (professional, TOPIK 5)
