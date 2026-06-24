@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-22'
+  last_updated: '2026-06-24'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 14
@@ -24,7 +24,7 @@ papers:
   G1EpeWYAAAAJ:WF5omc3nYNoC:
     citations: 0
     title: 'EfficientRollout: System-Aware Self-Speculative Decoding for RL Rollouts'
-    year: Unknown Year
+    year: '2026'
   G1EpeWYAAAAJ:Y0pCki6q_DkC:
     citations: 1
     title: 'TABED: Test-Time Adaptive Ensemble Drafting for Robust Speculative Decoding in LVLMs'
