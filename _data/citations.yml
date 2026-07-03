@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-06-24'
+  last_updated: '2026-07-03'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 14
     title: 'Eta inversion: Designing an optimal eta function for diffusion-based real image editing'
     year: '2024'
   G1EpeWYAAAAJ:9yKSN-GCB0IC:
-    citations: 31
+    citations: 33
     title: Counting guidance for high fidelity text-to-image synthesis
     year: '2025'
   G1EpeWYAAAAJ:IjCSPb-OGe4C:
@@ -42,9 +42,9 @@ papers:
     title: 'Focus on defocus: bridging the synthetic to real domain gap for depth estimation'
     year: '2020'
   G1EpeWYAAAAJ:ufrVoPGSRksC:
-    citations: 0
+    citations: 1
     title: 'AsyncOPD: How Stale Can On-Policy Distillation Be?'
-    year: Unknown Year
+    year: '2026'
   G1EpeWYAAAAJ:zYLM7Y9cAGgC:
     citations: 0
     title: 'UNCAGE: Contrastive Attention Guidance for Masked Generative Transformers in Text-to-Image Generation'
