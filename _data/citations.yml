@@ -1,28 +1,28 @@
 metadata:
-  last_updated: '2026-07-29'
+  last_updated: '2026-08-10'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
-    citations: 14
+    citations: 15
     title: 'Eta inversion: Designing an optimal eta function for diffusion-based real image editing'
     year: '2024'
   G1EpeWYAAAAJ:9yKSN-GCB0IC:
-    citations: 35
+    citations: 34
     title: Counting guidance for high fidelity text-to-image synthesis
     year: '2025'
   G1EpeWYAAAAJ:IjCSPb-OGe4C:
     citations: 4
     title: Draft-based approximate inference for llms
-    year: '2025'
+    year: '2026'
   G1EpeWYAAAAJ:Tyk-4Ss8FVUC:
-    citations: 30
+    citations: 35
     title: 'Parallelbench: Understanding the trade-offs of parallel decoding in diffusion llms'
-    year: '2025'
+    year: '2026'
   G1EpeWYAAAAJ:UeHWp8X0CEIC:
     citations: 2
-    title: 'State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models'
+    title: 'State-offset tuning: State-based parameter-efficient fine-tuning for state space models'
     year: '2025'
   G1EpeWYAAAAJ:WF5omc3nYNoC:
-    citations: 0
+    citations: 1
     title: 'EfficientRollout: System-Aware Self-Speculative Decoding for RL Rollouts'
     year: '2026'
   G1EpeWYAAAAJ:Y0pCki6q_DkC:
@@ -34,7 +34,7 @@ papers:
     title: 'CATS: Inference-aligned SFT for Diffusion LLMs via Context-sensitivity Aware Trajectory Sampling'
     year: Unknown Year
   G1EpeWYAAAAJ:qjMakFHDy7sC:
-    citations: 10
+    citations: 11
     title: Parameter-efficient fine-tuning of state space models
     year: '2024'
   G1EpeWYAAAAJ:u-x6o8ySG0sC:
