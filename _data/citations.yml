@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-10'
+  last_updated: '2026-08-28'
 papers:
   G1EpeWYAAAAJ:2osOgNQ5qMEC:
     citations: 15
@@ -14,7 +14,7 @@ papers:
     title: Draft-based approximate inference for llms
     year: '2026'
   G1EpeWYAAAAJ:Tyk-4Ss8FVUC:
-    citations: 35
+    citations: 37
     title: 'Parallelbench: Understanding the trade-offs of parallel decoding in diffusion llms'
     year: '2026'
   G1EpeWYAAAAJ:UeHWp8X0CEIC:
@@ -38,7 +38,7 @@ papers:
     title: Parameter-efficient fine-tuning of state space models
     year: '2024'
   G1EpeWYAAAAJ:u-x6o8ySG0sC:
-    citations: 118
+    citations: 121
     title: 'Focus on defocus: bridging the synthetic to real domain gap for depth estimation'
     year: '2020'
   G1EpeWYAAAAJ:ufrVoPGSRksC:
